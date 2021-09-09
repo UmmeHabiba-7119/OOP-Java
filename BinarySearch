@@ -1,0 +1,50 @@
+package binarysearch;
+import java.util.Scanner;
+
+public class BinarySearch {
+
+      public static void main(String[] args) {
+
+        int n;
+        int search;
+          Scanner input = new Scanner(System.in);
+
+           System.out.println("How many question do you want?");
+        n = input.nextInt();
+        
+        int[] array = new int[n];
+        System.out.println("Enter the numbers");
+        
+        for(int i=0; i<array.length; i++)
+        {
+            array[i] = input.nextInt();
+        }
+        System.out.println("Press the searching value ");
+        search = input.nextInt();
+        
+        int left = 0;
+        int right = array.length-1;
+        int mid = left+right/2;
+        
+        while(left<=right)
+        {        if(search==array[mid])
+        {
+            System.out.println("Yesss!! Found in location "+mid);
+            break;
+        }
+        else if(search<array[mid])
+        {
+            right = mid-1;
+        }
+        else
+        {
+            left = mid+1;
+        }
+        {
+            
+        }
+       
+    
+}
+}
+}
