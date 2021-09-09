@@ -1,0 +1,69 @@
+package mergesort;
+import java.util.Scanner;
+
+public class MergeSort {
+
+        public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        int m;
+        int n;
+        int result = 0;
+        System.out.println("How many question do you want?");
+        m = input.nextInt();
+        
+        System.out.println("Press the number ");
+        int[] array1 = new int[m];
+        
+        for(int i=0; i<array1.length; i++)
+        {
+            array1[i] = input.nextInt();
+        }
+        System.out.println("How many question do you want?");
+        n = input.nextInt();
+        
+        System.out.println("Press the number ");
+        int[] array2 = new int[n];
+        
+        for(int j=0; j<array2.length; j++)
+        {
+            array1[j] = input.nextInt();
+        }
+        
+        int[] array3 = new int[array1.length + array2.length];
+        
+        int p=0;
+        int q=0;
+        while(p<array1.length && q<array2.length)
+        {
+            if(array1[p]>array2[q])
+            {
+                array3[result] = array2[q];
+                q = q+1;
+                result = result+1;
+            }
+            else
+            {
+                array3[result] = array1[p];
+                p = p+1;
+                result = result+1;
+            }
+        }
+        while(p>=array1.length && q<array2.length)
+        {
+            array3[result] = array2[q];
+            q = q+1;
+            result = result+1;
+        }
+         while(p<array1.length && q>=array2.length)
+        {
+            array3[result] = array1[p];
+            p = p+1;
+            result = result+1;
+        }
+         for(int r=0; r<array3.length; r++)
+         {
+             System.out.println("");
+         }
+          }
+    }
